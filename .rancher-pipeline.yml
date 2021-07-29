@@ -2,7 +2,7 @@ stages:
 - name: 构建
   steps:
   - runScriptConfig:
-      image: java:8
+      image: maven3 jdk 8
       shellScript: mvn clean install
 - name: 发布
   steps:
