@@ -4,5 +4,12 @@ stages:
   - runScriptConfig:
       image: java:8
       shellScript: mvn clean install
+- name: 发布
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: renren-fast
+      registry: 127.0.0.1:34988
 timeout: 60
 notification: {}
